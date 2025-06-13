@@ -11,7 +11,7 @@
   1. Portable
   2. Light-weight
 
-2. **Docker Commands:**
+2. **Docker Commands  :**
      1.  docker -v                    (To check docker version)
      2.  docker login -u <username>  (and then it will ask a one-time password)  
      3.  docker logout
