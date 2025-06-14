@@ -24,3 +24,30 @@
      10. docker stop <container-name> or <container-id>    ( This will stop the container)
      11. docker rmi <image-name>      (To delete docker image)
      12. docker rm <container-name>    (To delete docker container. First container needs to be deleted then only image)
+  
+
+  ##  Day 2 – Building My First Docker Image & Core Concepts
+
+###  Tasks Completed
+- Created a custom Dockerfile and built my first image
+- Ran the container and understood container lifecycle
+- Practiced key commands: `docker build`, `run`, `images`, `ps -a`
+- Explored Docker architecture: versioning, layers, port binding
+- Compared Docker vs Virtual Machines (tiffin box vs portable kitchen)
+
+###  Learnings
+- Docker builds images using layered caching (faster rebuilds!)
+- Port binding lets containers talk to the outside world
+- Containers are lighter and faster than traditional VMs
+- Dockerfiles give total control over packaging your app
+
+**Docker Commands  :**
+  1. docker logs <container-id>
+  2. docker exec -it <container-id> /bin/bash
+  3.  docker exec -it <container-id> /bin/sh   (This helps to run additional commands in existing container)
+  4.  docker network ls  ( To list docker networks present)
+  5.  docker network create <network-name>  ( To create a own docker network)
+  6.  docker run -d -p 8080:80 <image-name>
+       p 8080:80   (port binding)
+       80 is the container port
+      8080 is the host port
