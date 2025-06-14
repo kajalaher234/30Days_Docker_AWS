@@ -1,4 +1,4 @@
-# AWS
+# Docker/AWS
 **Day 1: Docker installed and first container run/pull and hands-on prcatice**
 
 **What is Docker?**
