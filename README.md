@@ -28,14 +28,14 @@
 
   ##  Day 2 – Building My First Docker Image & Core Concepts
 
-###  Tasks Completed
+****Tasks Completed
 - Created a custom Dockerfile and built my first image
 - Ran the container and understood container lifecycle
 - Practiced key commands: `docker build`, `run`, `images`, `ps -a`
 - Explored Docker architecture: versioning, layers, port binding
 - Compared Docker vs Virtual Machines (tiffin box vs portable kitchen)
 
-###  Learnings
+**Learnings**
 - Docker builds images using layered caching (faster rebuilds!)
 - Port binding lets containers talk to the outside world
 - Containers are lighter and faster than traditional VMs
@@ -51,3 +51,24 @@
        p 8080:80   (port binding)
        80 is the container port
       8080 is the host port
+
+
+    ##  Day 3 – Docker Networking & Container Communication
+
+    **Tasks Completed**
+    1. Created network in docker
+    2. Created and connected multiple containers
+    3. Tested container-to-container communication
+
+    **Docker Commands  :**
+    1. docker network create my-network          (Created "my-network" network)
+    2. docker -d --name busy-network --network my-network busybox sleep 3600      (created "busy-container" container on "my-network" network")
+    3. docker -d --name alpine-network --network my-network alpine sleep 3600      (created "alpine-container" container on "my-network" network")
+    4. docker exec -it busy-conatiner sh      (enter busy-container)
+    5. ping alpine-container       (test was succesful)
+    6. docker network inspect my-network      (container connections, IP address and network details)
+
+    
+
+    
+   
