@@ -53,6 +53,7 @@
       8080 is the host port
 
 
+
     ##  Day 3 – Docker Networking & Container Communication
 
     **Tasks Completed**
@@ -68,7 +69,22 @@
     5. ping alpine-container       (test was succesful)
     6. docker network inspect my-network      (container connections, IP address and network details)
 
-    
+# Flask Docker Project 
+
+## Overview
+This project runs a simple Flask web application inside a Docker container.
+
+## Steps to Run
+1. Build the image: `docker build -t flask-app .`
+2. Run the container: `docker run -d -p 5000:5000 flask-app`
+3. Visit **http://localhost:5000** 
+
+## Technologies Used
+- Python & Flask
+- Docker
+- GitHub
+
+   
 
     
    
