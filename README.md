@@ -86,5 +86,19 @@ This project runs a simple Flask web application inside a Docker container.
 
    
 
-    
+**Day 4 : -Docker Compose & Multi-Container Apps**
+
+1. What is Docker Compose?
+     Docker Compose is a tool that allows us to define, configure, and run multi-container applications using a single YAML file (docker-compose.yml). It simplifies managing multiple services         with a single command (docker compose up).
+   Command:- docker compose -f <.yaml file> up   (This will start all the services mentioned in file)
+             docker compose -f <.yaml file> down  (This removes all containers)
+
+     Yaml file should have proper indentation then only it will run.
+
+   2. Dockerizing an application means packaging it into a Docker container, making it portable, scalable, and easy to deploy.
    
+  3.  Why Dockerize an Application?
+    a. Consistency: Runs the same across different environments (dev, test, production)
+    b. Portability: Works on any system with Docker installed 
+    c. Isolation: Prevents dependency conflicts between applications
+    d. Scalability: Easily deployable in microservices & cloud environments
