@@ -102,3 +102,48 @@ This project runs a simple Flask web application inside a Docker container.
     b. Portability: Works on any system with Docker installed 
     c. Isolation: Prevents dependency conflicts between applications
     d. Scalability: Easily deployable in microservices & cloud environments
+
+**Day 5 : Docker Volumes**
+  1. What is Docker Volumes?
+       Whenever we restart our container all the data in our virtual system gets lost, to overcome this we have docker volumes ensuring files and databases don’t disappear when a container is          removed or restarted.. Docker Volumes are used for persistence of data.
+
+     Commands:
+     1. To create volume:  docker volume create <vol_name>
+     2. To list the volume : docker volume ls
+     3. To delete the volume : docker volume rm <vol_name>
+     4. e.g Attach a volume to mysql container
+        docker run -d --name <mysql-container> -e MYSQL_ROOT_PASSWORD=rootpass -v mydata:/var/lib/mysql mysql:latest
+        mydata is volume name.
+
+    * Volumes can be attached to multiple containers.
+      docker run -it -v /Users/data:/test/data ubuntu
+        -v is for volume. /Users/data is absolute path of container and /test/data is voulme path.
+      * To open docker container:
+      docker exec -it <cont_id>
+
+      Default path:
+      Windows: C:\ProgramData\docker\volumes
+      Mac/Linux: /var/lib/docker/volumes
+
+
+      * Docker Prune:- It will remove the unused docker resources like images, containers, volumes and networks.
+        Command :-1. docker system prune -a   ( removes docker resources)
+                  2. docker image prune -a  (removes docker images)
+                  3. docker volume prune  (removes docker volumes)
+                  
+      * Docker Volume Types: 
+        1. Named Volumes → Created explicitly for persistent storage
+            docker volume create my_named_volume
+            
+        2. Anonymous Volumes → Created automatically without a name, typically for short-term use 
+            docker run -v /data busybox
+            
+        3.Bind Mounts → Directly maps a host directory to a container
+            docker run -v $(pwd)/logs:/var/log/nginx nginx
+
+        *Docker Networking Types:
+        
+        1.Bridge Network (Default) → Isolates containers while allowing communication within the same bridge.
+        2.Host Network → Containers share the host’s network namespace, removing isolation (useful for performance-sensitive apps).
+        3.None Network → Completely disables networking for security/isolation.
+     
